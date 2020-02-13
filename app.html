@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <style>
+	 	body{
+	 		height:100px;
+	 		background-color: royalblue;
+	 		position: center;
+	 		text-align: center;
+	 		display: flex;
+	 		flex-direction: column;
+	 		color:white;
+	 		align-items: center;
+	 	}
+
+	 	.location,
+	 	 .temperature{
+	 		height: 100px;
+	 		width:100%;
+	 		display: round;
+	 		align-items: center;
+	 		justify-content: space-around;
+	 	}
+	 	.location-timezone{
+	 		font-size: 40px;
+	 	}
+
+	 	.temperature{
+	 		flex-direction: column;
+
+	 	}
+	 	.degree{
+	 		align-items: center;
+	 		text-align: center;
+	 	}
+	 	
+	 	.degree h2{
+	 		font-size: 40px;
+	 		position: center;
+	 	}
+	 		#demo{
+	 		color:white;
+	 		font-size: 20px;
+	 		text-align: center;
+	 		box-sizing: border-box;
+	 		border:10px solid blue;
+
+	 	}
+	 	#country{
+	 		color:white;
+	 		font-size: 20px;
+	 		text-align: center;
+	 		box-sizing: border-box;
+	 		border:10px solid blue;
+	 	}
+	 	#population{
+	 		color:white;
+	 		font-size: 20px;
+	 		text-align: center;
+	 		box-sizing: border-box;
+	 		border:10px solid blue;
+	 	}
+	 	#temp{
+	 		color:white;
+	 		font-size: 20px;
+	 		text-align: center;
+	 		box-sizing: border-box;
+	 		border:10px solid blue;
+	 	}
+	 	button{
+	 		background-color:green;
+	 		color:white;
+	 		font-size: 20px;
+	 		margin:10px;
+	 		padding:15px; 
+	 		font-family: Arial, Helvetica, sans-serif;
+	 	}
+	 </style>
+</head>
+<body>
+
+	<div>
+		
+<div class="location">
+	<h1 class="location-timezone">Timezone</h1>
+</div>
+
+<div >
+	<img src="photo.png" height="80px" width="100px">
+</div>
+
+<div class="temperature">
+	<h2 class="degree">30F</h2>
+</div>
+
+    <div class="container">
+<p>Click the button to get the square root of each element in the array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo">City</p>
+<p id="country">Country</p>
+<p id="population">Population</p>
+<p id="temp">temp</p>
+</div>
+
+</div>
+		<script>
+				const weather = [
+ 	{
+ "cod": "200",
+ "message": 0,
+ "city": {
+ "geoname_id": 1907296,
+ "name": "Tawarano",
+ "lat": 35.0164,
+ "lon": 139.0077,
+ "country": "JP",
+ "iso2": "JP",
+ "type": "",
+ "population": 0
+ },
+"cnt": 10,
+ "list": [
+ {
+ "dt": 1485741600,
+ "temp": {
+ "day": 285.51,
+ "min": 285.51,
+ "max": 285.51,
+ "night": 285.51,
+ "eve": 285.51,
+ "morn": 285.51
+ }
+}
+ ]
+}]
+
+
+
+function myFunction() {
+  city = document.getElementById("demo")
+  const cityname = weather[0].city.name
+   city.innerHTML = `city name is ${cityname}`
+
+   country = document.getElementById("country")
+   const countryname = weather[0].city.country
+   country.innerHTML = `country name is ${countryname}`
+
+   population = document.getElementById("population")
+   const population1 = weather[0].city.population
+  population.innerHTML = `population is ${population1}`
+
+   temp = document.getElementById("temp")
+    const temp1 = weather[0].list[0].temp.morn
+ temp.innerHTML = `temperature is ${temp1}`
+  
+}
+
+		</script>
+
+	</body>
+</html>
